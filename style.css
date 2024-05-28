@@ -163,7 +163,7 @@ input {
     transition-duration: 0.4s;
 }
 
-.submit {
+.button_submit {
     width: 188px;
     height: 55px;
     font-size: 20px;
@@ -174,7 +174,7 @@ input {
     cursor: pointer;
 }
 
-.limpiar {
+.button_limpiar {
     width: 188px;
     height: 55px;
     font-size: 20px;
@@ -184,13 +184,13 @@ input {
     cursor:pointer; 
 }
 
-.submit:hover, .limpiar:hover {
+.button_submit:hover, .button_limpiar:hover {
     background-color: rgba(222, 184, 135, 0.822);
     color: aliceblue; /* cambiar el estilo del boton cuando se mueva el cursor sobre el  */
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /*aparece la sombra en el boton cuando este pasa sobre el */
 }
 
-.submit:active, .limpiar:active {
+.button_submit:active, .button_limpiar:active {
     color:rgb(45, 248, 5);
 }
 

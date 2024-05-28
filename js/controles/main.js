@@ -1,20 +1,11 @@
+// main.js
 import { servicesProducts } from "../services/product-services.js";
 
-document.addEventListener("DOMContentLoaded", function(){
-
-  // contenedor para los productos
+// contenedor para los productos
 const productContainer = document.querySelector("[data-producto]");
 
 // formulario para agregar productos
-const validarFormu = document.querySelector("[data-form]");
-
-// boton enviar y formulario
-const nombreInput = document.querySelector("[data-name]");
-const precioInput = document.querySelector("[data-price]");
-const imagenInput = document.querySelector("[data-image]");
-const enviarBtn = document.querySelector(".submit");
-
-
+const formu = document.querySelector("[data-form]");
 
 // crea la estructura del HTML de las card de los productos
 function crearCard(name, price, imagen, id) {
@@ -31,28 +22,26 @@ function crearCard(name, price, imagen, id) {
         <div class="card-container--value">
           <p>${price}</p>
         <button class="delete_button" data-id="${id}">
-        <img src="imagenes/icono-basura.png" alt="Eliminar" />
+        <img src="imagenes/icono-basura.png" alt="icono de basura" />
       </button>
     </div>
   </div>
     `;
 
- productContainer.appendChild(card);
- return card;
+  productContainer.appendChild(card);
+  return card;
 }
 
 // renderiza los productos en la pagina
 const render = async () => {
   try {
     const listProducts = await servicesProducts.productList();
+    // limpia el contenedor de productos 
+    productContainer.innerHTML = '';
 
     listProducts.forEach((product) => {
       productContainer.appendChild(
-        crearCard(
-          product.name,
-          product.price,
-          product.imagen,
-          product.id)
+        crearCard(product.name, product.price, product.imagen, product.id)
       );
     });
   } catch (error) {
@@ -60,51 +49,61 @@ const render = async () => {
   }
 };
 
-// formulario 
+// evento de envio de formulario
+formu.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  
 
-function validarFormu() {
-  if (nombreInput.value.trim() !== "" && precioInput.value.trim() !== "" && imagenInput.value.trim() !== "") {
-    enviarBtn.disabled = false;
-  } else {
-    enviarBtn.disabled = true;
-  }
-}
-// evento para validar el formulario en cada cambio de entrada
-nombreInput.addEventListener("input", validarFormu);
-precioInput.addEventListener("input", validarFormu);
-imagenInput.addEventListener("input", validarFormu);
+  // obtener los datos del formulario
+  const name = document.querySelector("[data-name]").value;
+  const price = document.querySelector("[data-price]").value;
+  const imagen = document.querySelector("[data-image]").value;
 
+  console.log("Nombre:", name);
+  console.log("Precio:", price);
+  console.log("Imagen:", imagen);
 
-// Evento para eliminar productos
-productContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("delete_button")) {
-    const productId = event.target.dataset.id;
-    const card = event.target.closest(".card");
-    card.remove(); // Elimina la tarjeta de la interfaz de usuario
+  try {
+    // enviar los datos al servidor para crear nuevo producto
+    const nuevoProduct = await servicesProducts.createProducts(
+      name,
+      price,
+      imagen
+    );
+    console.log("Respuesta del servidor:", nuevoProduct);
 
-    return productId();
-
-    // Aquí puedes agregar la lógica para eliminar el producto del backend
-    // Puedes usar el productId para identificar el producto que se va a eliminar
+    // agregar nuevo producto
+    productContainer.appendChild(
+      crearCard(
+        nuevoProduct.name,
+        nuevoProduct.price,
+        nuevoProduct.imagen,
+        nuevoProduct.id
+      )
+    );
+    
+    // limpiar formulario despues de agregar
+    formu.reset();
+  } catch (error) {
+    console.error(error);
   }
 });
-})
 
-
-// evento de envio de formulario
-// formu.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   const name = document.querySelector("[data-name]").value;
-//   const price = document.querySelector("[data-price]").value;
-//   const image = document.querySelector("[data-image]").value;
-
-//   servicesProducts.createProducts(name,price,image)
-//   .then((res)=> console.log(res))
-//   .catch((err)=> console.log(err));
-// });
-
-  
+//  eliminar producto
+productContainer.addEventListener("click", async (event) => {
+  const botonEliminar = event.target.closest(".delete_button");
+  if (botonEliminar) {
+    const itemId = botonEliminar.dataset.id;
+    servicesProducts
+      .deleteProducto(itemId)
+      .then(() => {
+        console.log("Producto eliminado exitosamente");
+        // Eliminar el elemento de la tarjeta del DOM
+        botonEliminar.closest(".card").remove();
+      })
+      .catch((err) => console.log(err));
+  }
+});
 
 // inicia la renderizacion de productos al cargar la pag
 render();

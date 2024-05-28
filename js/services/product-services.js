@@ -1,18 +1,17 @@
+// product-services.js
 const productList =  () => {
-    return fetch("http://localhost:3000/productos")
-    .then((res) => {
-        if (!res.ok) {
-            throw new Error("Error al obtener la lista de productos");
-        }
-        return res.json();
-    })
-
+    return fetch("https://fake-api-zeta.vercel.app/productos")
+    .then((res) => res.json ())
     .catch((err) => console.error(err));
+    
 };
 
 // crea productos nuevos
 const createProducts = (name, price, imagen) => {
-    return fetch("http://localhost:3000/productos", {
+    console.log("Enviando solicitud para crear producto...");
+    console.log("Datos del nuevo producto:", name, price, imagen);
+
+    return fetch("https://fake-api-zeta.vercel.app/productos", {
              method: "POST",
              headers: {
                  "Content-Type": "application/json",
@@ -25,18 +24,30 @@ const createProducts = (name, price, imagen) => {
              }),
          })
          
-         .then((res) =>{
-            if (!res.ok) {
-                throw new Error("Error al crear un nuevo producto");
-            }
-            return res.json();
+         .then((res) => res.json())
+         .then((data) => {
+            console.log("Respuesta del servidor:", data);
+            return data; // Devolver los datos del nuevo producto creado
          })
          .catch((err) => console.error(err));
 };
 
+const deleteProducto = (id) => {
+    return fetch(`https://fake-api-zeta.vercel.app/productos/${id}` , {
+        method:"DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+        .then((res) => res.json())
+        .catch((err) => console.log(err));
+    
+};
+
 export const servicesProducts = {
     productList, 
-    createProducts
+    createProducts,
+    deleteProducto
 }
 
 
