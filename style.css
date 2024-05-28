@@ -1,0 +1,269 @@
+body {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 1;
+}
+
+header {
+    font-style: normal;
+    color: rgb(243, 238, 239);
+    background: rgb(55, 2, 248);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.encabezado_principal {
+    font-size: 25px;  
+    font-family: "Silkscreen", sans-serif;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px red, 1px 1px 4px rgb(241, 206, 8); /* añade sombra al texto*/
+
+}
+
+.encabezado_principal::before{
+    content: "💛💛💛";
+}
+
+main { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.contenedor_productos {
+    width: 758px;
+    margin-top: 3%;
+}
+
+.productos {
+    font-size: 25px;
+    font-family: "Silkscreen", sans-serif;
+    text-align: center;
+    height: 24px;
+    padding: 40px 0; 
+}
+
+.container_card {
+    overflow-y: scroll;
+    gap: 20px;
+    height: 55vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;  
+} 
+
+/* diseño de la barra de desplazamiento */
+.container_card::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(247, 83, 7, 0.979); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(240, 54, 8, 0.959);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 196px;
+    /* height: 43vh;  */
+    border: blue 2px solid;
+    border-radius: 10px;
+    gap: 10px;
+    margin-bottom: 35px;
+    background:cadetblue;
+    box-shadow:  2px 4px 2px 1px rgb(5, 253, 253); /*agrega sombra al contenedor o imagen */   
+    
+}
+
+.img {
+    width: 176px;
+    height: 174px;
+    border: rgb(18, 18, 19) 5px solid;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 12px 12px 0 rgba(212, 5, 253, 0.836), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.card-container--info {
+    text-align: justify;
+    font-size: 16px;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 20px;
+}
+
+.card-container--value {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 10px;
+}
+
+/* .delete_button {
+    position: relative;
+    background-color:cadetblue; 
+} */
+
+.delete {
+    background-color:cadetblue;
+    width: 30px;
+    height: 30px;
+}
+
+.carrito-de-compras {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.titulo-productos {
+    font-size: 25px;
+    font-family: "Silkscreen", sans-serif;
+    padding: 80px 0 0 0;
+    text-align: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    padding: 40px 0;
+}
+
+input {
+    height: 58px;
+    border: #03318C solid; 
+    border-radius: 30px;
+    font-size: 15px;
+    color: #03318C;
+    box-sizing: border-box;  
+}
+
+.botones {
+    width: 392px; 
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    line-height: normal;
+    transition-duration: 0.4s;
+}
+
+.submit {
+    width: 188px;
+    height: 55px;
+    font-size: 20px;
+    border: #03318C solid;
+    border-radius: 15px;
+    background: #03318C;
+    color: white;
+    cursor: pointer;
+}
+
+.limpiar {
+    width: 188px;
+    height: 55px;
+    font-size: 20px;
+    border: #03318C solid;
+    border-radius: 15px;
+    color:#03318C;
+    cursor:pointer; 
+}
+
+.submit:hover, .limpiar:hover {
+    background-color: rgba(222, 184, 135, 0.822);
+    color: aliceblue; /* cambiar el estilo del boton cuando se mueva el cursor sobre el  */
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /*aparece la sombra en el boton cuando este pasa sobre el */
+}
+
+.submit:active, .limpiar:active {
+    color:rgb(45, 248, 5);
+}
+
+.footer {
+    margin-top: 50px;
+    display: flex;
+     /* gap: 50px;  */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background: #5D04D9 ;
+    padding: 20px;
+}
+
+.footer_rodapie {
+    font-size: 24px;
+    font-family: "Silkscreen", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px red, 1px 1px 4px rgb(241, 206, 8); /* añade sombra al texto*/
+}
+
+.footer_rodapie::before {
+    content: "💛💛💛";
+}
+
+/* responsive mobile */
+ @media screen and (max-width: 480px)  {
+    
+    header {
+        display: block;
+        width: 100%;
+    } 
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contenedor_productos {
+        width: 95%;
+    }
+
+    .container_card {
+        display: flex;
+        justify-content: center;
+    }
+
+    .delete_button{
+        background: #5D04D9;
+    
+    }
+
+    .productos {
+        width: 100%;
+        text-align: center;
+    } 
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .carrito-de-compras {
+        align-items: center;
+    }
+    
+    .formulario {
+        width: 80%;
+    }
+    
+    .botones {
+        width: 98%;
+    }
+} 

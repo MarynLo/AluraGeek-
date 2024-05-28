@@ -1,0 +1,59 @@
+{
+    "productos": [
+        {
+            "name": "Mujer Maravilla Funko",
+            "price": "$500",
+            "imagen": "https://falabella.scene7.com/is/image/FalabellaPE/gsc_124144236_3868976_1?wid=800&hei=800&qlt=70",
+            "id": 1
+        },
+        {
+            "name": "Consola Nintendo Switch OLED",
+            "price": "$1000.00",
+            "imagen": "https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00004549659733l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+            "id": 2
+        },
+        {
+            "name": "Consola Xbox Series X 1TB ",
+            "price": "1000.00",
+            "imagen": "https://cdn-3.expansion.mx/dims4/default/29e945f/2147483647/resize/1280x/quality/90/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Faa%2F19%2F424015944108888aa6a1d8e49702%2Fxbox-series-x.JPG",
+            "id": 3
+        },
+        {
+            "name": "Funko Pop: Pokémon Charmander",
+            "price": "$300.00",
+            "imagen": "https://m.media-amazon.com/images/I/710RJ2B7y7L.jpg",
+            "id": 4
+        },
+        {
+            "name": "Funko Pop: Harry Potter",
+            "price": "$300.00",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_853099-MLM47718649424_092021-O.webp",
+            "id": 5
+        },
+        {
+            "name": "Audifonos Gaming Skullcandy SLYR Over-Ear",
+            "price": "$900.00",
+            "imagen": "https://skullcandy.com.pe/wp-content/uploads/2024/03/slyr_black_digi_hype_2.webp",
+            "id": 6
+        },
+        {
+            "name": "Maquina Retro: My Arcade",
+            "price": "$1000.00",
+            "imagen": "https://cdn.gameplanet.com/wp-content/uploads/2022/08/31063704/videojuego-portatil-dreamgear-retro-arcade-machine-x.jpg",
+            "id": 7
+        },
+        {
+            "name": "Lampara de noche coleccionable - Pac Man",
+            "price": "$500.00",
+            "imagen": "https://puchix.com/cdn/shop/products/lamparapac5_1024x.png?v=1615841754",
+            "id":8
+        },
+        {
+            "name": "Lampara Covenant - Halo",
+            "price": "$800.00",
+            "imagen": "https://www.accesoriosmexicali.com/cdn/shop/products/halo-light-up-sword-14_grande.jpg?v=1669234693",
+            "id": 9
+        }
+        
+    ]
+}
