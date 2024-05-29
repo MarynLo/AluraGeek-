@@ -221,8 +221,8 @@ input {
     content: "🎮🎮🎮";
 }
 
-/* responsive mobile */
- @media screen and (max-width: 480px)  {
+/* responsive mobile y tablet */
+ @media screen and (max-width: 768px)  {
     
     header {
         display: block;
@@ -271,3 +271,4 @@ input {
         width: 98%;
     }
 } 
+
