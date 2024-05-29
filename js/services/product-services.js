@@ -33,7 +33,7 @@ const createProducts = (name, price, imagen) => {
 };
 
 const deleteProducto = (id) => {
-    return fetch(`https://fake-api-zeta.vercel.app/productos/${id}` , {
+    return fetch(`https://fake-api-zeta.vercel.app/productos/${id}`, {
         method:"DELETE",
         headers: {
             "Content-Type": "application/json",

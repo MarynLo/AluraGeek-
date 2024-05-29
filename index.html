@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Jaro:opsz@6..72&family=Jersey+10+Charted&family=Jersey+15+Charted&family=Micro+5+Charted&family=Press+Start+2P&family=Russo+One&family=Silkscreen:wght@400;700&family=Tac+One&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Jaro:opsz@6..72&family=Jersey+10+Charted&family=Jersey+15+Charted&family=Micro+5+Charted&family=Press+Start+2P&family=Russo+One&family=Silkscreen:wght@400;700&family=Tac+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
 
   <body>
@@ -21,23 +28,23 @@
       <section class="contenedor_productos">
         <h1 class="productos">Mis Productos</h1>
 
-        <div class="container_card" data-producto>
-        </div>
+        <div class="container_card" data-producto></div>
+        
       </section>
 
       <section class="carrito-de-compras">
         <h1 class="titulo-productos">Agregar Productos</h1>
 
         <form class="formulario" data-form>
-          <input data-name type="text" placeholder="Nombre" />
-          <input data-price type="number" placeholder="Precio" />
-          <input data-image type="url" placeholder="Imagen" />
-        </form>
+          <input data-name placeholder="Nombre" type="text" />
+          <input data-price placeholder="Precio" type="text" />
+          <input data-image placeholder="Imagen" type="text" />
 
-        <div class="botones">
-          <button type="submit" class="button_submit">Enviar</button>
-          <button type="reset" class="button_limpiar">Limpiar</button>
-        </div>
+          <div class="botones">
+            <button type="submit" class="button-submit">Enviar</button>
+            <button type="reset" class="button-clear">Limpiar</button>
+          </div>
+        </form>
       </section>
     </main>
 
@@ -50,6 +57,5 @@
     </section>
     <!-- javascript -->
     <script src="js/controles/main.js" type="module"></script>
-    
   </body>
 </html>
