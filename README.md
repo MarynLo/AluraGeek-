@@ -14,3 +14,4 @@ Eliminar un Producto
 
 1. En la seccion Mis Productos cada producto cuenta con un icono de eliminar, al haceer click el producto sera eliminado del catalogo.
 
+Desarrollado por Marisol Negrete
